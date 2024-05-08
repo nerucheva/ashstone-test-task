@@ -6,6 +6,7 @@
   border-bottom: 1px solid var(--gray0);
 }
 
-img {
+.search {
   position: absolute;
+  right: 0px;
 }

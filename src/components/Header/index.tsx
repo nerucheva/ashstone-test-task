@@ -8,7 +8,7 @@ export const Header: React.FC = () => (
   <div>
     <div className={styles.logoSection}>
       <Logo />
-      <img src="src/assets/searchIcon.svg" alt="Search" />
+      <img className={styles.search} src="src/assets/searchIcon.svg" alt="Search" />
     </div>
     <div></div>
   </div>

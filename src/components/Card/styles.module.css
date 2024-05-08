@@ -47,16 +47,19 @@
   line-height: var(--lh20);
 }
 
+/* TODO: fix card width so they fill the whole width of container */
+
 @media all and (min-width: 600px) {
   .card {
-    width: 48%;
+    width: 47%;
   }
 }
 
 @media all and (min-width: 1024px) {
   @media all and (min-width: 600px) {
     .card {
-      width: 31%;
+      width: 30.33%;
+      /* width: 360px; */
     }
   }
 }
