@@ -1,0 +1,11 @@
+.logoSection {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  padding-block: 1.813rem 1.563rem;
+  border-bottom: 1px solid var(--gray0);
+}
+
+img {
+  position: absolute;
+}
