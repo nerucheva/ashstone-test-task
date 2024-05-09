@@ -7,6 +7,7 @@
 
 .menuSection {
   width: 100%;
+  padding-block: 1.875rem;
 }
 
 .menu {
@@ -28,11 +29,6 @@
   margin-top: 0.5rem;
   transform: rotate(0deg);
   transition: transform var(--animation);
-}
-
-.menuItem:hover .titleArrow,
-.menuItem:focus .titleArrow {
-  transform: rotate(180deg);
 }
 
 .menuItem {
@@ -73,12 +69,6 @@ button.title {
   transition: color var(--animation), padding-left var(--animation);
 }
 
-.link:hover,
-.link:focus {
-  color: var(--gray4);
-  padding-left: 0.5rem;
-}
-
 .link img {
   transform: rotate(270deg);
 }
@@ -95,6 +85,10 @@ button.title {
   .stickySection {
     position: sticky;
     top: 0;
+  }
+
+  .menuSection {
+    padding-block: 0;
   }
 
   .menu {
@@ -116,6 +110,11 @@ button.title {
     padding-block: 1.375rem 1.25rem;
   }
 
+  .menuItem:hover .titleArrow,
+  .menuItem:focus .titleArrow {
+    transform: rotate(180deg);
+  }
+
   .subMenu {
     display: flex;
     position: absolute;
@@ -133,5 +132,11 @@ button.title {
   .menuItem:hover .subMenu {
     z-index: 1;
     opacity: 1;
+  }
+
+  .link:hover,
+  .link:focus {
+    color: var(--gray4);
+    padding-left: 0.5rem;
   }
 }

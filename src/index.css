@@ -67,6 +67,10 @@ li {
   all: unset;
 }
 
+.noOverflow {
+  position: fixed;
+}
+
 .container {
   width: 100%;
   padding-inline: 1.25rem;

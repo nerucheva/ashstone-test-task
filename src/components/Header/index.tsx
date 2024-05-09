@@ -6,13 +6,13 @@ import { Logo } from '../Logo';
 import styles from './styles.module.css';
 
 type Props = {
-  onClose: () => void;
+  onClick: () => void;
 };
 
-export const Header: React.FC<Props> = ({ onClose }) => (
+export const Header: React.FC<Props> = ({ onClick }) => (
   <header className={styles.header}>
     <div className={clsx(styles.logoSection, 'container')}>
-      <button className={styles.menuButton} onClick={onClose}>
+      <button className={styles.menuButton} onClick={onClick}>
         <img src="src/assets/munuIcon.svg" alt="Open menu" />
       </button>
 

@@ -1,0 +1,38 @@
+.modalContainer {
+  background-color: var(--white);
+  width: 100%;
+}
+
+.modalContainer.mobile {
+  width: 85%;
+}
+
+/* TODO: make it the same height as the main header */
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 2rem 1.625rem;
+  border-bottom: 1px solid var(--gray0);
+}
+
+.close {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.dimmer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 139999;
+  background-color: var(--white);
+  opacity: 0.6;
+}
+
+.dimmer.noDimmer {
+  display: none;
+}
