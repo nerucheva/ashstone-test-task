@@ -16,11 +16,15 @@ function App() {
       <Header onClose={() => console.log('!')} />
 
       <main>
-        <Menu />
+        <div className="menuDesktop">
+          <Menu />
+        </div>
 
-        <Menu isMobile onClick={() => console.log('!')} />
+        {/* <Menu isMobile onClick={() => console.log('!')} /> */}
 
-        <CardFeed />
+        <div className="cardFeedWrapper">
+          <CardFeed />
+        </div>
       </main>
     </>
   );

@@ -46,7 +46,6 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 3rem;
   padding-bottom: 10.313rem;
 }
 
@@ -75,9 +74,24 @@ li {
   max-width: 1160px;
 }
 
+.menuDesktop {
+  display: none;
+}
+
+.cardFeedWrapper {
+  margin-top: 3rem;
+}
+
 @media all and (min-width: 600px) {
   .container {
     padding-inline: 2rem;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .menuDesktop {
+    display: block;
+    width: 100%;
   }
 }
 

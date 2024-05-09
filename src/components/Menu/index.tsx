@@ -60,8 +60,8 @@ type Props = {
 };
 
 export const Menu: React.FC<Props> = ({ isMobile = false, onClick }) => (
-  <div className={clsx(styles.wrapper, { [styles.menuMobile]: isMobile, [styles.stickySection]: !isMobile })}>
-    <nav className={clsx(styles.menuSection, { ['container']: !isMobile })}>
+  <div className={clsx(styles.wrapper, styles.stickySection)}>
+    <nav className={clsx(styles.menuSection, 'container')}>
       <ul className={styles.menu}>
         {menuContent.map((item) => (
           <div className={styles.menuItem} key={item.title}>
