@@ -117,17 +117,21 @@ button.title {
   }
 
   .subMenu {
-    display: none;
+    display: flex;
     position: absolute;
     top: 4.125rem;
     width: 11rem;
+    z-index: -1;
     height: auto;
     padding: 0.75rem 1.25rem;
     border: 1px solid var(--gray0);
+    opacity: 0;
+    transition: opacity var(--animation), z-index var(--animation);
   }
 
   .menuItem:focus .subMenu,
   .menuItem:hover .subMenu {
-    display: flex;
+    z-index: 1;
+    opacity: 1;
   }
 }
