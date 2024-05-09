@@ -10,3 +10,8 @@
   position: absolute;
   right: 0px;
 }
+
+.menuSection {
+  padding-block: 1.375rem 1.25rem;
+  border-bottom: 1px solid var(--gray0);
+}

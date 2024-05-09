@@ -1,0 +1,15 @@
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.menuItem {
+  color: var(--black);
+  font-size: var(--font16);
+  font-weight: var(--weightMedium);
+}
+
+.subMenu {
+  display: none;
+}

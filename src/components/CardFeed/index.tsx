@@ -90,7 +90,17 @@ const cardContent = [
 export const CardFeed: React.FC = () => (
   <div className={styles.cardContainer}>
     {cardContent.map((item) => (
-      <Card alt={item.alt} image={item.image} category={item.category} title={item.title} author={item.author} date={item.date} views={item.views} content={item.content} />
+      <Card
+        alt={item.alt}
+        image={item.image}
+        category={item.category}
+        title={item.title}
+        author={item.author}
+        date={item.date}
+        views={item.views}
+        content={item.content}
+        key={item.title}
+      />
     ))}
   </div>
 );

@@ -13,7 +13,10 @@ function App() {
   return (
     <>
       <Header />
-      <CardFeed />
+
+      <main>
+        <CardFeed />
+      </main>
       {/* <img src="src/assets/cardImg.png" alt="" /> */}
       {/* <div>
         <a href="https://vitejs.dev" target="_blank">
