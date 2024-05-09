@@ -1,7 +1,6 @@
 .cardContainer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  row-gap: 48px;
-  max-width: 1160px;
+  justify-content: flex-start;
+  gap: 3rem 40px;
 }

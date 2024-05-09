@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './styles.module.css';
 
-export type Props = {
+type Props = {
   image: string;
   alt: string;
   category: string;
@@ -14,7 +14,7 @@ export type Props = {
 };
 
 export const Card: React.FC<Props> = ({ image, alt, category, title, author, date, views, content }) => (
-  <div className={styles.card}>
+  <article className={styles.card}>
     {/* TODO: add srcset */}
     <img className={styles.img} src={image} alt={alt} />
     <span className={styles.category}>{category}</span>
@@ -27,5 +27,5 @@ export const Card: React.FC<Props> = ({ image, alt, category, title, author, dat
     </div>
 
     <p className={styles.content}>{content}</p>
-  </div>
+  </article>
 );

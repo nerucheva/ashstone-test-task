@@ -1,0 +1,31 @@
+.header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border-bottom: 1px solid var(--gray0);
+}
+
+.logoSection {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding-block: 1.813rem 1.563rem;
+}
+
+.menuButton {
+}
+
+@media all and (min-width: 768px) {
+  .menuButton {
+    display: none;
+  }
+
+  .logoSection {
+    justify-content: center;
+  }
+
+  .search {
+    position: absolute;
+    right: 0px;
+  }
+}
