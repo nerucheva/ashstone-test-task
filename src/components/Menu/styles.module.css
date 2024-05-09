@@ -1,15 +1,92 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--gray0);
+}
+
+.styckySection {
+  position: sticky;
+  top: 0;
+}
+
 .menu {
   display: flex;
   justify-content: center;
   gap: 2rem;
 }
 
-.menuItem {
+.title {
   color: var(--black);
-  font-size: var(--font16);
-  font-weight: var(--weightMedium);
+  font-size: var(--fs16);
+  font-weight: var(--fwMedium);
+  transition: color var(--animation);
+}
+
+.menuItem:hover .title,
+.menuItem:focus .title {
+  color: var(--gray4);
+}
+
+.menuItem .title {
+  display: flex;
+  position: relative;
+  padding-block: 1.375rem 1.25rem;
+}
+
+.title .titleArrow {
+  margin-top: 0.5rem;
+  transform: rotate(0deg);
+  transition: transform var(--animation);
+}
+
+.menuItem:hover .titleArrow,
+.menuItem:focus .titleArrow {
+  transform: rotate(180deg);
+}
+
+button.title {
+  gap: 0.313rem;
 }
 
 .subMenu {
   display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 4.125rem;
+  width: 11rem;
+  padding: 0.75rem 1.25rem;
+  background-color: var(--white);
+  border: 1px solid var(--gray0);
+}
+
+.menuItem:focus .subMenu,
+.menuItem:hover .subMenu {
+  display: flex;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 0.5rem;
+  padding-left: 0;
+  color: var(--black);
+  font-size: var(--fs13);
+  transition: color var(--animation), padding-left var(--animation);
+}
+
+.link:hover,
+.link:focus {
+  color: var(--gray4);
+  padding-left: 0.5rem;
+}
+
+.link img {
+  transform: rotate(270deg);
+}
+
+.subMenu li:not(:last-child) .link {
+  border-bottom: 1px solid var(--gray0);
 }

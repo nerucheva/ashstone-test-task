@@ -10,26 +10,26 @@
 }
 
 .category {
-  font-size: var(--font13);
-  font-weight: var(--weightBold);
+  font-size: var(--fs13);
+  font-weight: var(--fwBold);
   color: var(--red);
 }
 
 .title {
   margin: 0;
-  font-size: var(--font24);
-  font-weight: var(--weightBold);
+  font-size: var(--fs24);
+  font-weight: var(--fwBold);
   line-height: var(--lh30);
 }
 
 .info * {
-  font-size: var(--font12);
-  font-weight: var(--weightNormal);
+  font-size: var(--fs12);
+  font-weight: var(--fwNormal);
   color: var(--gray2);
 }
 
 .info span:first-child {
-  font-weight: var(--weightBold);
+  font-weight: var(--fwBold);
   color: var(--black);
 }
 
@@ -43,7 +43,7 @@
 .content {
   margin: 0;
   color: var(--gray3);
-  font-size: var(--font14);
+  font-size: var(--fs14);
   line-height: var(--lh20);
 }
 

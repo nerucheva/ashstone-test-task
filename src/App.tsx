@@ -3,6 +3,7 @@
 // import viteLogo from '/vite.svg'
 
 import { Header } from './components/Header';
+import { Menu } from './components/Menu';
 import { CardFeed } from './components/CardFeed';
 
 import './App.css';
@@ -15,6 +16,8 @@ function App() {
       <Header />
 
       <main>
+        <Menu />
+
         <CardFeed />
       </main>
       {/* <img src="src/assets/cardImg.png" alt="" /> */}

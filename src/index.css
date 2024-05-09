@@ -1,5 +1,6 @@
 :root {
   --red: #eb0028;
+  --white: #ffffff;
   --gray0: #e9e9e9;
   --gray1: #d7d7d7;
   --gray2: #9b9b9b;
@@ -7,18 +8,20 @@
   --gray4: #969696;
   --black: #000000;
 
-  --weightBold: 700;
-  --weightMedium: 500;
-  --weightNormal: 400;
+  --fwBold: 700;
+  --fwMedium: 500;
+  --fwNormal: 400;
 
-  --font12: 0.75rem;
-  --font13: 0.813rem;
-  --font14: 0.875rem;
-  --font16: 1rem;
-  --font24: 1.5rem;
+  --fs12: 0.75rem;
+  --fs13: 0.813rem;
+  --fs14: 0.875rem;
+  --fs16: 1rem;
+  --fs24: 1.5rem;
 
   --lh20: 1.25rem;
   --lh30: 1.875rem;
+
+  --animation: 0.3s;
 
   /* TODO: use proper font & line-height */
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -35,29 +38,51 @@ body {
   min-width: 320px;
   min-height: 100vh;
   margin: 0;
+  overflow: scroll;
 }
 
 main {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  padding-block: 3rem 10.313rem;
+  align-items: center;
+  gap: 3rem;
+  padding-bottom: 10.313rem;
 }
 
 button {
   background-color: transparent;
   border: none;
   font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  padding: 0;
 }
 
 a {
   text-decoration: none;
 }
 
-ul {
+ul,
+li {
   all: unset;
 }
 
 .container {
   width: 100%;
+  padding-inline: 1rem;
+  box-sizing: border-box;
   max-width: 1160px;
+}
+
+@media all and (min-width: 600px) {
+  .container {
+    padding-inline: 2rem;
+  }
+}
+
+@media all and (min-width: 1280px) {
+  .container {
+    padding-inline: 0;
+  }
 }

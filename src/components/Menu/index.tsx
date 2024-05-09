@@ -1,4 +1,5 @@
 import React from 'react';
+import clsx from 'clsx';
 
 import styles from './styles.module.css';
 
@@ -54,29 +55,38 @@ const menuContent = [
 ];
 
 export const Menu: React.FC = () => (
-  <nav>
-    <ul className={styles.menu}>
-      {menuContent.map((item) => (
-        <>
-          {item.link ? (
-            <a className={styles.menuItem} href={item.link} key={item.link}>
-              {item.title}
-            </a>
-          ) : (
-            <button className={styles.menuItem} key={item.title}>
-              <span>{item.title}</span>
-            </button>
-          )}
+  <div className={clsx(styles.wrapper, styles.styckySection)}>
+    <nav className={clsx(styles.menuSection, 'container')}>
+      <ul className={styles.menu}>
+        {menuContent.map((item) => (
+          <div className={styles.menuItem}>
+            {item.link ? (
+              <a className={styles.title} href={item.link} key={item.link}>
+                {item.title}
+              </a>
+            ) : (
+              <button className={styles.title} key={item.title}>
+                <span>{item.title}</span>
+                <img className={styles.titleArrow} src="src/assets/chevronIcon.svg" alt="" />
+              </button>
+            )}
 
-          <ul className={styles.subMenu}>
-            {item.options?.map((subitem) => (
-              <li key={subitem.link}>
-                <a href={subitem.link}>{subitem.title}</a>
-              </li>
-            ))}
-          </ul>
-        </>
-      ))}
-    </ul>
-  </nav>
+            {item.options ? (
+              <ul className={styles.subMenu}>
+                {item.options?.map((subitem) => (
+                  <li key={subitem.link}>
+                    <a className={styles.link} href={subitem.link}>
+                      <span>{subitem.title}</span>
+
+                      <img src="src/assets/chevronIcon.svg" alt="" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            ) : null}
+          </div>
+        ))}
+      </ul>
+    </nav>
+  </div>
 );
