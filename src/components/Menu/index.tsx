@@ -59,9 +59,9 @@ export const Menu: React.FC = () => (
     <nav className={clsx(styles.menuSection, 'container')}>
       <ul className={styles.menu}>
         {menuContent.map((item) => (
-          <div className={styles.menuItem}>
+          <div className={styles.menuItem} key={item.title}>
             {item.link ? (
-              <a className={styles.title} href={item.link} key={item.link}>
+              <a className={styles.title} href={item.link} key={item.title}>
                 {item.title}
               </a>
             ) : (
@@ -74,7 +74,7 @@ export const Menu: React.FC = () => (
             {item.options ? (
               <ul className={styles.subMenu}>
                 {item.options?.map((subitem) => (
-                  <li key={subitem.link}>
+                  <li key={subitem.title}>
                     <a className={styles.link} href={subitem.link}>
                       <span>{subitem.title}</span>
 
