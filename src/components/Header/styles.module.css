@@ -7,12 +7,25 @@
 
 .logoSection {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   position: relative;
   padding-block: 1.813rem 1.563rem;
 }
 
-.search {
-  position: absolute;
-  right: 0px;
+.menuButton {
+}
+
+@media all and (min-width: 768px) {
+  .menuButton {
+    display: none;
+  }
+
+  .logoSection {
+    justify-content: center;
+  }
+
+  .search {
+    position: absolute;
+    right: 0px;
+  }
 }

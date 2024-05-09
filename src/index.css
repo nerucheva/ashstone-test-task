@@ -70,7 +70,7 @@ li {
 
 .container {
   width: 100%;
-  padding-inline: 1rem;
+  padding-inline: 1.25rem;
   box-sizing: border-box;
   max-width: 1160px;
 }
