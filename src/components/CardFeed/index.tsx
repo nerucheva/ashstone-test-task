@@ -1,4 +1,5 @@
 import React from 'react';
+import clsx from 'clsx';
 import { Card } from '../Card';
 
 import styles from './styles.module.css';
@@ -88,7 +89,7 @@ const cardContent = [
 ];
 
 export const CardFeed: React.FC = () => (
-  <div className={styles.cardContainer}>
+  <div className={clsx(styles.cardContainer, 'container')}>
     {cardContent.map((item) => (
       <Card
         alt={item.alt}

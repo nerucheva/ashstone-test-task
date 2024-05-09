@@ -1,9 +1,15 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border-bottom: 1px solid var(--gray0);
+}
+
 .logoSection {
   display: flex;
   justify-content: center;
   position: relative;
   padding-block: 1.813rem 1.563rem;
-  border-bottom: 1px solid var(--gray0);
 }
 
 .search {
@@ -13,5 +19,4 @@
 
 .menuSection {
   padding-block: 1.375rem 1.25rem;
-  border-bottom: 1px solid var(--gray0);
 }
