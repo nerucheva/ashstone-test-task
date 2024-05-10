@@ -1,4 +1,6 @@
 import React from 'react';
+import { useEffect } from 'react';
+import clsx from 'clsx';
 
 import styles from './styles.module.css';
 
@@ -8,9 +10,19 @@ export type Props = {
 };
 
 export const Modal: React.FC<Props> = ({ isVisible, children }) => {
-  if (!isVisible) {
-    return null;
-  }
+  useEffect(() => {
+    if (isVisible) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.touchAction = 'none';
+      document.body.style.position = 'fixed';
+      document.body.style.top = '0';
+    } else {
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+      document.body.style.position = '';
+      document.body.style.top = '';
+    }
+  }, [isVisible]);
 
-  return <div className={styles.modal}>{children}</div>;
+  return <div className={clsx(styles.modal, { [styles.modalOpen]: isVisible })}>{children}</div>;
 };

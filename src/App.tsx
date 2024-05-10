@@ -11,7 +11,8 @@ function App() {
   const [isVisible, setIsVisible] = useState(false);
 
   return (
-    <div className={isVisible ? 'noOverflow' : undefined}>
+    // <div className={isVisible ? 'noOverflow' : undefined}>
+    <>
       <Header onClick={() => setIsVisible(true)} />
 
       <main>
@@ -19,13 +20,14 @@ function App() {
           <Menu />
         </div>
 
-        <MobileMenuModal onClose={() => setIsVisible(false)} isVisible={isVisible} />
+        <MobileMenuModal onClose={() => setIsVisible(false)} isVisible={isVisible} isMobileMenu />
 
         <div className="cardFeedWrapper">
           <CardFeed />
         </div>
       </main>
-    </div>
+    </>
+    // </div>
   );
 }
 

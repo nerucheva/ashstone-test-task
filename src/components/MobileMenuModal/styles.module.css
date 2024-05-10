@@ -3,8 +3,9 @@
   width: 100%;
 }
 
-.modalContainer.mobile {
+.modalContainer.mobileMenu {
   width: 85%;
+  border-right: 1px solid var(--gray0);
 }
 
 /* TODO: make it the same height as the main header */
@@ -23,16 +24,15 @@
 
 .dimmer {
   position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  inset: 0;
   width: 100%;
   z-index: 139999;
   background-color: var(--white);
   opacity: 0.6;
+  transition: opacity var(--animation);
 }
 
 .dimmer.noDimmer {
-  display: none;
+  z-index: -2;
+  opacity: 0;
 }

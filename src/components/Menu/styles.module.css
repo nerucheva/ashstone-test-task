@@ -8,6 +8,7 @@
 .menuSection {
   width: 100%;
   padding-block: 1.875rem;
+  background-color: var(--white);
 }
 
 .menu {
