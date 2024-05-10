@@ -9,7 +9,7 @@
   max-width: 100%;
 }
 
-.category {
+.tags {
   font-size: var(--fs13);
   font-weight: var(--fwBold);
   color: var(--red);
@@ -40,7 +40,7 @@
   color: var(--gray1);
 }
 
-.content {
+.text {
   margin: 0;
   color: var(--gray3);
   font-size: var(--fs14);

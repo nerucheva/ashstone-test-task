@@ -17,7 +17,7 @@ export const Header: React.FC<Props> = ({ onClick }) => (
       </button>
 
       <a className={styles.logoWrapper} href="#" aria-label="Blog – homepage">
-        <Logo width="" height="" />
+        <Logo width="100%" height="auto" />
       </a>
       <img className={styles.search} src="src/assets/searchIcon.svg" alt="Search" />
     </div>

@@ -2,30 +2,29 @@ import React from 'react';
 
 import styles from './styles.module.css';
 
-type Props = {
-  image: string;
-  alt: string;
-  category: string;
+export type CardPops = {
+  img: string;
+  img_2x: string;
+  tags: string;
   title: string;
-  author: string;
+  autor: string;
   date: string;
   views: string;
-  content: string;
+  text: string;
 };
 
-export const Card: React.FC<Props> = ({ image, alt, category, title, author, date, views, content }) => (
+export const Card: React.FC<CardPops> = ({ img, img_2x, tags, title, autor, date, views, text }) => (
   <article className={styles.card}>
-    {/* TODO: add srcset */}
-    <img className={styles.img} src={image} alt={alt} />
-    <span className={styles.category}>{category}</span>
+    <img className={styles.img} src={img} srcSet={`${img_2x} 2x`} alt={title} />
+    <span className={styles.tags}>{tags}</span>
     <h2 className={styles.title}>{title}</h2>
 
     <div className={styles.info}>
-      <span>{author}</span>
+      <span>{autor}</span>
       <time>{date}</time>
       <span>{views}</span>
     </div>
 
-    <p className={styles.content}>{content}</p>
+    <p className={styles.text}>{text}</p>
   </article>
 );
