@@ -2,26 +2,36 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  border-bottom: 1px solid var(--gray0);
 }
 
 .logoSection {
   display: flex;
   justify-content: space-between;
   position: relative;
-  padding-block: 1.813rem 1.563rem;
+  padding-block: 2rem 1.188rem;
 }
 
-.menuButton {
+.logoWrapper {
+  width: 10.199rem;
+  height: 1.5rem;
 }
 
 @media all and (min-width: 768px) {
+  .header {
+    border-bottom: 1px solid var(--gray0);
+  }
+
   .menuButton {
     display: none;
   }
 
   .logoSection {
     justify-content: center;
+  }
+
+  .logoWrapper {
+    width: 11.302rem;
+    height: 1.663rem;
   }
 
   .search {

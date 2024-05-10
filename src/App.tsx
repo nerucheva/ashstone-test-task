@@ -1,32 +1,33 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
+import { useState } from 'react';
 
 import { Header } from './components/Header';
 import { Menu } from './components/Menu';
 import { CardFeed } from './components/CardFeed';
+import { MobileMenuModal } from './components/MobileMenuModal';
 
 import './App.css';
 
 function App() {
-  // const [count, setCount] = useState(0)
+  const [isVisible, setIsVisible] = useState(false);
 
   return (
+    // <div className={isVisible ? 'noOverflow' : undefined}>
     <>
-      <Header onClose={() => console.log('!')} />
+      <Header onClick={() => setIsVisible(true)} />
 
       <main>
         <div className="menuDesktop">
           <Menu />
         </div>
 
-        {/* <Menu isMobile onClick={() => console.log('!')} /> */}
+        <MobileMenuModal onClose={() => setIsVisible(false)} isVisible={isVisible} isMobileMenu />
 
         <div className="cardFeedWrapper">
           <CardFeed />
         </div>
       </main>
     </>
+    // </div>
   );
 }
 

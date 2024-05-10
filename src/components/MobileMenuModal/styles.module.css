@@ -1,0 +1,42 @@
+.modalContainer {
+  background-color: var(--white);
+  width: 100%;
+}
+
+.modalContainer.mobileMenu {
+  border-right: 1px solid var(--gray0);
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 2rem 1.625rem;
+  border-bottom: 1px solid var(--gray0);
+}
+
+.close {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.dimmer {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  z-index: 139999;
+  background-color: var(--white);
+  opacity: 0.6;
+  transition: opacity var(--animation);
+}
+
+.dimmer.noDimmer {
+  z-index: -2;
+  opacity: 0;
+}
+
+@media all and (min-width: 768px) {
+  .mobileMenuModal {
+    display: none;
+  }
+}
