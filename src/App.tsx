@@ -7,11 +7,14 @@ import { MobileMenuModal } from './components/MobileMenuModal';
 
 import './App.css';
 
+const response = await fetch('https://cloud.codesupply.co/endpoint/react/data.json');
+
+const data = await response.json();
+
 function App() {
   const [isVisible, setIsVisible] = useState(false);
 
   return (
-    // <div className={isVisible ? 'noOverflow' : undefined}>
     <>
       <Header onClick={() => setIsVisible(true)} />
 
@@ -23,11 +26,10 @@ function App() {
         <MobileMenuModal onClose={() => setIsVisible(false)} isVisible={isVisible} isMobileMenu />
 
         <div className="cardFeedWrapper">
-          <CardFeed />
+          <CardFeed data={data} />
         </div>
       </main>
     </>
-    // </div>
   );
 }
 
