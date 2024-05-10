@@ -82,22 +82,30 @@ export const Menu: React.FC<Props> = ({ isMobile = false }) => {
                   {item.title}
                 </a>
               ) : (
-                <button className={styles.title} onClick={isMobile ? () => toggleSubMenu(index) : undefined} key={item.title}>
+                <button
+                  className={clsx(styles.title, { [styles.opened]: openSubMenuIndex === index })}
+                  onClick={isMobile ? () => toggleSubMenu(index) : undefined}
+                  key={item.title}
+                >
                   <span>{item.title}</span>
                   <img className={styles.titleArrow} src="src/assets/chevronIcon.svg" alt="" />
                 </button>
               )}
 
               {item.options ? (
-                <ul className={clsx(styles.subMenu, { [styles.subMenuOpen]: openSubMenuIndex === index })}>
-                  {item.options.map((subitem) => (
-                    <li key={subitem.title}>
-                      <a className={styles.link} href={subitem.link}>
-                        <span>{subitem.title}</span>
-                        <img src="src/assets/chevronIcon.svg" alt="" />
-                      </a>
-                    </li>
-                  ))}
+                <ul className={clsx(styles.subMenu, { [styles.opened]: openSubMenuIndex === index })}>
+                  <div className={styles.contentWrapper}>
+                    <div className={styles.content}>
+                      {item.options.map((subitem) => (
+                        <li key={subitem.title}>
+                          <a className={styles.link} href={subitem.link}>
+                            <span>{subitem.title}</span>
+                            <img src="src/assets/chevronIcon.svg" alt="" />
+                          </a>
+                        </li>
+                      ))}
+                    </div>
+                  </div>
                 </ul>
               ) : null}
             </div>
