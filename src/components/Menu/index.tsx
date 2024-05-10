@@ -72,7 +72,7 @@ export const Menu: React.FC<Props> = ({ isMobile = false }) => {
   };
 
   return (
-    <div className={clsx(styles.wrapper, styles.stickySection)}>
+    <div className={clsx(styles.wrapper, styles.stickySection, { [styles.menuDesktop]: !isMobile })}>
       <nav className={clsx(styles.menuSection, 'container')}>
         <ul className={styles.menu}>
           {menuContent.map((item, index) => (

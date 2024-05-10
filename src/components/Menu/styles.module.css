@@ -5,6 +5,10 @@
   background-color: var(--white);
 }
 
+.wrapper.menuDesktop {
+  display: none;
+}
+
 .menuSection {
   width: 100%;
   padding-block: 1.875rem;
@@ -103,6 +107,10 @@ button.title.opened img {
 }
 
 @media all and (min-width: 768px) {
+  .wrapper.menuDesktop {
+    display: flex;
+  }
+
   .wrapper {
     border-bottom: 1px solid var(--gray0);
   }

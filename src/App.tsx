@@ -19,9 +19,7 @@ function App() {
       <Header onClick={() => setIsVisible(true)} />
 
       <main>
-        <div className="menuDesktop">
-          <Menu />
-        </div>
+        <Menu />
 
         <MobileMenuModal onClose={() => setIsVisible(false)} isVisible={isVisible} isMobileMenu />
 
