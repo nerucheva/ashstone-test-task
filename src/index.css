@@ -83,7 +83,7 @@ li {
 }
 
 .cardFeedWrapper {
-  margin-top: 3rem;
+  margin-top: 1.188rem;
 }
 
 @media all and (min-width: 600px) {
@@ -96,6 +96,10 @@ li {
   .menuDesktop {
     display: block;
     width: 100%;
+  }
+
+  .cardFeedWrapper {
+    margin-top: 3rem;
   }
 }
 

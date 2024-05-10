@@ -7,9 +7,10 @@ import styles from './styles.module.css';
 export type Props = {
   isVisible: boolean;
   children: React.ReactNode;
+  width?: number | string;
 };
 
-export const Modal: React.FC<Props> = ({ isVisible, children }) => {
+export const Modal: React.FC<Props> = ({ isVisible, children, width = '100%' }) => {
   useEffect(() => {
     if (isVisible) {
       document.body.style.overflow = 'hidden';
@@ -24,5 +25,9 @@ export const Modal: React.FC<Props> = ({ isVisible, children }) => {
     }
   }, [isVisible]);
 
-  return <div className={clsx(styles.modal, { [styles.modalOpen]: isVisible })}>{children}</div>;
+  return (
+    <div className={clsx(styles.modal, { [styles.modalOpen]: isVisible })} style={{ width }}>
+      {children}
+    </div>
+  );
 };

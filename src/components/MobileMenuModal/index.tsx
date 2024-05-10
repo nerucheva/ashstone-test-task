@@ -14,8 +14,8 @@ type Props = {
 };
 
 export const MobileMenuModal: React.FC<Props> = ({ onClose, isVisible, isMobileMenu }) => (
-  <>
-    <Modal isVisible={isVisible}>
+  <div className={styles.mobileMenuModal}>
+    <Modal isVisible={isVisible} width="85%">
       <div className={clsx(styles.modalContainer, { [styles.mobileMenu]: isMobileMenu })}>
         <div className={clsx(styles.modalHeader, 'container')}>
           <Logo width="10.08rem" />
@@ -28,6 +28,6 @@ export const MobileMenuModal: React.FC<Props> = ({ onClose, isVisible, isMobileM
       </div>
     </Modal>
 
-    <div className={clsx(styles.dimmer, { [styles.noDimmer]: !isVisible })} />
-  </>
+    <button className={clsx(styles.dimmer, { [styles.noDimmer]: !isVisible })} onClick={onClose} />
+  </div>
 );

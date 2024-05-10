@@ -4,11 +4,9 @@
 }
 
 .modalContainer.mobileMenu {
-  width: 85%;
   border-right: 1px solid var(--gray0);
 }
 
-/* TODO: make it the same height as the main header */
 .modalHeader {
   display: flex;
   align-items: center;
@@ -35,4 +33,10 @@
 .dimmer.noDimmer {
   z-index: -2;
   opacity: 0;
+}
+
+@media all and (min-width: 768px) {
+  .mobileMenuModal {
+    display: none;
+  }
 }
