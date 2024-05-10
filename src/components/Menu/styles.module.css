@@ -32,6 +32,7 @@
   transition: transform var(--animation);
 }
 
+/* parent / details */
 .menuItem {
   border-bottom: 0.063rem solid var(--gray0);
   padding-block: 1rem;
@@ -46,10 +47,12 @@
   padding-bottom: 0;
 }
 
+/* button */
 button.title {
   gap: 0.313rem;
 }
 
+/* the submenu */
 .subMenu {
   display: flex;
   flex-direction: column;
@@ -57,6 +60,15 @@ button.title {
   box-sizing: border-box;
   width: 100%;
   background-color: var(--white);
+  height: 0;
+  opacity: 0;
+  transition: height 0.5s, opacity 0.5s;
+}
+
+.subMenuOpen {
+  background-color: pink;
+  height: auto;
+  opacity: 1;
 }
 
 .link {

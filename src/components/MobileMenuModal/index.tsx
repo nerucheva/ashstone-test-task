@@ -24,7 +24,7 @@ export const MobileMenuModal: React.FC<Props> = ({ onClose, isVisible, isMobileM
             <img src="src/assets/closeIcon.svg" alt="Close menu" />
           </button>
         </div>
-        <Menu isMobile onClick={() => console.log('!')} />
+        <Menu isMobile />
       </div>
     </Modal>
 
