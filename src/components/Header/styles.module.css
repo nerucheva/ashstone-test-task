@@ -4,11 +4,17 @@
   width: 100%;
 }
 
+.menuButton {
+  width: 44px;
+  height: 44px;
+}
+
 .logoSection {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   position: relative;
-  padding-block: 2rem 1.188rem;
+  height: 75px;
 }
 
 .logoWrapper {
@@ -27,6 +33,8 @@
 
   .logoSection {
     justify-content: center;
+    padding-block: 1.813rem 1.625rem;
+    height: auto;
   }
 
   .logoWrapper {

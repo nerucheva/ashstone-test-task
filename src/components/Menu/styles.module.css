@@ -5,6 +5,10 @@
   background-color: var(--white);
 }
 
+.wrapper.menuDesktop {
+  display: none;
+}
+
 .menuSection {
   width: 100%;
   padding-block: 1.875rem;
@@ -23,13 +27,13 @@
   color: var(--black);
   font-size: var(--fs16);
   font-weight: var(--fwMedium);
-  transition: color var(--animation);
+  transition: color var(--animationShort);
 }
 
 .title .titleArrow {
   margin-top: 0.5rem;
   transform: rotate(0deg);
-  transition: transform var(--animation);
+  transition: transform var(--animationShort);
 }
 
 .menuItem {
@@ -52,7 +56,7 @@ button.title {
 
 button.title img {
   transform: rotate(0deg);
-  transition: transform var(--animation);
+  transition: transform var(--animationShort);
 }
 
 button.title.opened img {
@@ -63,7 +67,7 @@ button.title.opened img {
   display: grid;
   grid-template-rows: 0fr;
   overflow: hidden;
-  transition: grid-template-rows 400ms;
+  transition: grid-template-rows var(--animationMedium);
 
   padding: 0.75rem 1.25rem 0;
   box-sizing: border-box;
@@ -91,7 +95,7 @@ button.title.opened img {
   padding-left: 0;
   color: var(--black);
   font-size: var(--fs13);
-  transition: color var(--animation), padding-left var(--animation);
+  transition: color var(--animationShort), padding-left var(--animationShort);
 }
 
 .link img {
@@ -107,9 +111,16 @@ button.title.opened img {
     border-bottom: 1px solid var(--gray0);
   }
 
-  .stickySection {
+  .wrapper.menuDesktop {
+    display: flex;
     position: sticky;
     top: 0;
+    transform: translateY(0);
+    transition: transform var(--animationMedium);
+  }
+
+  .wrapper.menuDesktop.hide {
+    transform: translateY(-200px);
   }
 
   .menuSection {
@@ -150,7 +161,7 @@ button.title.opened img {
     padding: 0.75rem 1.25rem;
     border: 1px solid var(--gray0);
     opacity: 0;
-    transition: opacity var(--animation), z-index var(--animation);
+    transition: opacity var(--animationShort), z-index var(--animationShort);
   }
 
   .menuItem:focus .subMenu,
