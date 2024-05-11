@@ -110,6 +110,7 @@ button.title.opened img {
   .wrapper.menuDesktop {
     display: flex;
     position: sticky;
+    z-index: 1;
     top: 0;
     transform: translateY(0);
     transition: transform var(--animationMedium);
@@ -169,7 +170,7 @@ button.title.opened img {
 
   .menuItem:focus .subMenu,
   .menuItem:hover .subMenu {
-    z-index: 1;
+    z-index: 4;
     opacity: 1;
     pointer-events: auto;
   }
