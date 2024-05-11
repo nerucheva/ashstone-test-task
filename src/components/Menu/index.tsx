@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import clsx from 'clsx';
 
 import styles from './styles.module.css';
@@ -66,13 +66,30 @@ type Props = {
 
 export const Menu: React.FC<Props> = ({ isMobile = false }) => {
   const [openSubMenuIndex, setOpenSubMenuIndex] = useState<number | null>(null);
+  const [isSticky, setIsSticky] = useState<boolean>(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY < 340) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const toggleSubMenu = (index: number) => {
     setOpenSubMenuIndex(openSubMenuIndex === index ? null : index);
   };
 
   return (
-    <div className={clsx(styles.wrapper, styles.stickySection, { [styles.menuDesktop]: !isMobile })}>
+    <div className={clsx(styles.wrapper, { [styles.menuDesktop]: !isMobile, [styles.hide]: !isSticky })}>
       <nav className={clsx(styles.menuSection, 'container')}>
         <ul className={styles.menu}>
           {menuContent.map((item, index) => (
