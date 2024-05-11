@@ -66,7 +66,7 @@ type Props = {
 
 export const Menu: React.FC<Props> = ({ isMobile = false }) => {
   const [openSubMenuIndex, setOpenSubMenuIndex] = useState<number | null>(null);
-  const [isSticky, setIsSticky] = useState<boolean>(false);
+  const [isSticky, setIsSticky] = useState<boolean>(true);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -112,16 +112,14 @@ export const Menu: React.FC<Props> = ({ isMobile = false }) => {
               {item.options ? (
                 <ul className={clsx(styles.subMenu, { [styles.opened]: openSubMenuIndex === index })}>
                   <div className={styles.contentWrapper}>
-                    <div className={styles.content}>
-                      {item.options.map((subitem) => (
-                        <li key={subitem.title}>
-                          <a className={styles.link} href={subitem.link}>
-                            <span>{subitem.title}</span>
-                            <img src="src/assets/chevronIcon.svg" alt="" />
-                          </a>
-                        </li>
-                      ))}
-                    </div>
+                    {item.options.map((subitem) => (
+                      <li key={subitem.title}>
+                        <a className={styles.link} href={subitem.link}>
+                          <span>{subitem.title}</span>
+                          <img src="src/assets/chevronIcon.svg" alt="" />
+                        </a>
+                      </li>
+                    ))}
                   </div>
                 </ul>
               ) : null}
