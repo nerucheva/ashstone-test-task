@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './styles.module.css';
 
-export type CardPops = {
+export type Post = {
   img: string;
   img_2x: string;
   tags: string;
@@ -13,7 +13,7 @@ export type CardPops = {
   text: string;
 };
 
-export const Card: React.FC<CardPops> = ({ img, img_2x, tags, title, autor, date, views, text }) => (
+export const Card: React.FC<Post> = ({ img, img_2x, tags, title, autor, date, views, text }) => (
   <article className={styles.card}>
     <img className={styles.img} src={img} srcSet={`${img_2x} 2x`} alt={title} />
     <span className={styles.tags}>{tags}</span>
