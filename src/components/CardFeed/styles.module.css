@@ -4,3 +4,24 @@
   justify-content: flex-start;
   gap: 3rem 40px;
 }
+
+.postButton {
+  width: 100%;
+}
+
+/* TODO: write styles for hover & focus */
+.postButton:after {
+  content: '';
+}
+
+@media all and (min-width: 600px) {
+  .postButton {
+    width: calc(50% - 20px);
+  }
+}
+
+@media all and (min-width: 1024px) {
+  .postButton {
+    width: calc(33.33% - 26.666px);
+  }
+}
