@@ -83,10 +83,6 @@ button.title.opened img {
   min-height: 0;
 }
 
-.content {
-  margin: 1rem;
-}
-
 .link {
   display: flex;
   align-items: center;
@@ -154,20 +150,28 @@ button.title.opened img {
   .subMenu {
     display: flex;
     position: absolute;
-    top: 4.125rem;
+    top: 3.875rem;
     width: 11rem;
-    z-index: -1;
+    z-index: -10;
     height: auto;
     padding: 0.75rem 1.25rem;
     border: 1px solid var(--gray0);
     opacity: 0;
+    pointer-events: none;
     transition: opacity var(--animationShort), z-index var(--animationShort);
+  }
+
+  .contentWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
   }
 
   .menuItem:focus .subMenu,
   .menuItem:hover .subMenu {
     z-index: 1;
     opacity: 1;
+    pointer-events: auto;
   }
 
   .link:hover,

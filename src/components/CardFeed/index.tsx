@@ -2,11 +2,11 @@ import React from 'react';
 import clsx from 'clsx';
 
 import { Card } from '../Card';
-import { CardPops } from '../Card';
+import { Post } from '../Card';
 import styles from './styles.module.css';
 
 type Props = {
-  data: CardPops[];
+  data: Post[];
 };
 
 export const CardFeed: React.FC<Props> = ({ data }) => (
