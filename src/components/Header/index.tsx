@@ -8,7 +8,7 @@ import styles from './styles.module.css';
 
 type Props = {
   onClick: () => void;
-  searchOnChange: (e) => void;
+  searchOnChange: (e: any) => void;
 };
 
 export const Header: React.FC<Props> = ({ onClick, searchOnChange }) => (

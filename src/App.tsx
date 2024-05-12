@@ -9,31 +9,40 @@ import { Post } from './components/Card';
 
 import './App.css';
 
-const response = await fetch('https://cloud.codesupply.co/endpoint/react/data.json');
-
-const filterPosts = (searchText: string, postsList: Post[]) => {
-  if (!searchText) {
-    return postsList;
-  }
-  return postsList.filter(({ title, text }) => title.toLowerCase().includes(searchText.toLowerCase()) || text.toLowerCase().includes(searchText.toLowerCase()));
-};
-
-const data = await response.json();
-
 function App() {
   const [isVisible, setIsVisible] = useState(false);
-
   const [query, setQuery] = useState('');
-  const [postsList, setPostsList] = useState(data);
+  const [postsList, setPostsList] = useState<Post[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('https://cloud.codesupply.co/endpoint/react/data.json');
+        const data = await response.json();
+        setPostsList(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   useEffect(() => {
     const Debounce = setTimeout(() => {
-      const filteredCars = filterPosts(query, data);
+      const filteredCars = filterPosts(query, postsList);
       setPostsList(filteredCars);
     }, 300);
 
     return () => clearTimeout(Debounce);
-  }, [query]);
+  }, [query, postsList]);
+
+  const filterPosts = (searchText: string, postsList: Post[]) => {
+    if (!searchText) {
+      return postsList;
+    }
+    return postsList.filter(({ title, text }) => title.toLowerCase().includes(searchText.toLowerCase()) || text.toLowerCase().includes(searchText.toLowerCase()));
+  };
 
   return (
     <>

@@ -8,7 +8,7 @@ import { CloseIcon } from '../CloseIcon';
 import styles from './styles.module.css';
 
 type Props = {
-  onChange: (e) => void;
+  onChange: (e: any) => void;
 };
 
 export const Search: React.FC<Props> = ({ onChange }) => {
