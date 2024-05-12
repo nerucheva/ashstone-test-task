@@ -15,9 +15,14 @@
   border-bottom: 1px solid var(--gray0);
 }
 
-.close {
-  display: flex;
-  flex-direction: row-reverse;
+.closeButton {
+  width: 44px;
+  height: 44px;
+}
+
+.closeButton img {
+  width: 19px;
+  height: 19px;
 }
 
 .dimmer {

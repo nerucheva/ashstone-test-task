@@ -20,7 +20,7 @@ export const MobileMenuModal: React.FC<Props> = ({ onClose, isVisible, isMobileM
         <div className={clsx(styles.modalHeader, 'container')}>
           <Logo width="10.08rem" />
 
-          <button onClick={onClose}>
+          <button className={styles.closeButton} onClick={onClose}>
             <img src="src/assets/closeIcon.svg" alt="Close menu" />
           </button>
         </div>
@@ -28,6 +28,6 @@ export const MobileMenuModal: React.FC<Props> = ({ onClose, isVisible, isMobileM
       </div>
     </Modal>
 
-    <button className={clsx(styles.dimmer, { [styles.noDimmer]: !isVisible })} onClick={onClose} />
+    <div className={clsx(styles.dimmer, { [styles.noDimmer]: !isVisible })} onClick={onClose} role="button" />
   </div>
 );

@@ -9,6 +9,11 @@
   width: 100%;
 }
 
+/* TODO: write styles for hover & focus */
+.postButton:after {
+  content: '';
+}
+
 @media all and (min-width: 600px) {
   .postButton {
     width: calc(50% - 20px);
