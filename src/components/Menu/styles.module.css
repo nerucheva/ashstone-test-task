@@ -23,6 +23,7 @@
 
 .title {
   display: flex;
+  align-items: center;
   position: relative;
   color: var(--black);
   font-size: var(--fs16);
@@ -31,12 +32,14 @@
 }
 
 .title .titleArrow {
-  margin-top: 0.5rem;
+  margin-top: 1px;
   transform: rotate(0deg);
   transition: transform var(--animationShort);
 }
 
 .menuItem {
+  display: flex;
+  flex-direction: column;
   border-bottom: 1px solid var(--gray0);
   padding-block: 1rem;
 }
@@ -67,16 +70,16 @@ button.title.opened img {
   display: grid;
   grid-template-rows: 0fr;
   overflow: hidden;
-  transition: grid-template-rows var(--animationMedium);
-
-  padding: 0.75rem 1.25rem 0;
   box-sizing: border-box;
   width: 100%;
   background-color: var(--white);
+  padding: 0 1.25rem 0;
+  transition: grid-template-rows var(--animationMedium), padding var(--animationMedium);
 }
 
 .subMenu.opened {
   grid-template-rows: 1fr;
+  padding-top: 0.75rem;
 }
 
 .contentWrapper {
@@ -112,6 +115,7 @@ button.title.opened img {
     position: sticky;
     z-index: 1;
     top: 0;
+    height: 58px;
     transform: translateY(0);
     transition: transform var(--animationMedium);
   }
@@ -140,7 +144,7 @@ button.title.opened img {
   }
 
   .title {
-    padding-block: 1.375rem 1.25rem;
+    height: 58px;
   }
 
   .menuItem:hover .titleArrow,
@@ -151,7 +155,7 @@ button.title.opened img {
   .subMenu {
     display: flex;
     position: absolute;
-    top: 3.875rem;
+    top: 58px;
     width: 11rem;
     z-index: -10;
     height: auto;
@@ -159,7 +163,7 @@ button.title.opened img {
     border: 1px solid var(--gray0);
     opacity: 0;
     pointer-events: none;
-    transition: opacity var(--animationShort), z-index var(--animationShort);
+    transition: opacity var(--animationShort);
   }
 
   .contentWrapper {

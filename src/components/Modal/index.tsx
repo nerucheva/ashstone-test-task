@@ -25,11 +25,12 @@ export const Modal: React.FC<Props> = ({ isVisible, children, onClose, isMobileM
     }
   }, [isVisible]);
 
+  // TODO: trigger animation by the component mounting and unmounting (framer-motion)
   return (
     <>
       <div className={clsx(styles.modal, { [styles.open]: isVisible, [styles.menu]: isMobileMenu, [styles.default]: !isMobileMenu })}>
         <div className={clsx(styles.modalContainer)}>
-          <div className={clsx(styles.modalHeader, 'container')}>
+          <div className={clsx(styles.modalHeader, 'blockContainer')}>
             {isMobileMenu && <Logo width={162} height={24} />}
 
             <button className={styles.closeButton} onClick={onClose}>

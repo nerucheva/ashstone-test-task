@@ -1,0 +1,84 @@
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  overflow: scroll;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5rem;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+li {
+  all: unset;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.container,
+.blockContainer {
+  width: 100%;
+  padding-inline: 1.25rem;
+  box-sizing: border-box;
+  max-width: 1160px;
+}
+
+.cardFeedWrapper {
+  margin-top: 1.188rem;
+}
+
+@media all and (min-width: 600px) {
+  .container,
+  .blockContainer {
+    padding-inline: 2rem;
+  }
+}
+
+@media all and (min-width: 768px) {
+  main {
+    padding-bottom: 6rem;
+  }
+
+  .cardFeedWrapper {
+    margin-top: 3rem;
+  }
+}
+
+@media all and (min-width: 1280px) {
+  main {
+    padding-bottom: 10.313rem;
+  }
+
+  .container {
+    padding-inline: 0;
+  }
+}

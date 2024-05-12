@@ -3,6 +3,7 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   gap: 3rem 40px;
+  background-color: var(--white);
 }
 
 .postButton {
@@ -16,7 +17,7 @@
   content: '';
   position: absolute;
   z-index: -1;
-  inset: -10px;
+  inset: -0.625rem;
   border: 1px solid transparent;
   transition: border-color var(--animationShort);
 }

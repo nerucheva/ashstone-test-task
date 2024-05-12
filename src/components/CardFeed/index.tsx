@@ -28,7 +28,7 @@ export const CardFeed: React.FC<Props> = ({ data }) => {
 
       <Modal onClose={() => setSelectedCardIndex(undefined)} isVisible={!!selectedCard}>
         {selectedCard && (
-          <div className={clsx(styles.cardWrapper, 'container')}>
+          <div className={clsx(styles.cardWrapper, 'blockContainer')}>
             <Card
               img={selectedCard.img}
               img_2x={selectedCard.img_2x}

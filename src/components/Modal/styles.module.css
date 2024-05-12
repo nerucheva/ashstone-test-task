@@ -14,9 +14,8 @@
   -webkit-box-shadow: 10px 10px 46px -5px rgba(0, 0, 0, 0.33);
   -moz-box-shadow: 10px 10px 46px -5px rgba(0, 0, 0, 0.33);
   box-shadow: 10px 10px 46px -5px rgba(0, 0, 0, 0.33);
-  opacity: 0;
   transform: translateY(100%);
-  transition: transform var(--animationLong);
+  transition: transform var(--animationMedium);
 }
 
 .modal.default.open {
@@ -50,11 +49,11 @@
 
 .default .modalHeader {
   justify-content: flex-end;
-  height: 64px;
+  height: 4rem;
 }
 
 .menu .modalHeader {
-  height: 82px;
+  height: 5.125rem;
   justify-content: space-between;
 }
 
@@ -64,11 +63,11 @@
 }
 
 .default .modalContainer {
-  padding-top: 64px;
+  padding-top: 4rem;
 }
 
 .menu .modalContainer {
-  padding-top: 82px;
+  padding-top: 5.125rem;
 }
 
 .closeButton {
@@ -89,24 +88,36 @@
 }
 
 @media all and (min-width: 768px) {
-  .modal.default,
-  .modal.default.open {
-    inset: auto;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
   .modal.default {
     width: 60vw;
     max-width: 562px;
     height: auto;
     max-height: 80vh;
     z-index: -10;
-    transition: opacity var(--animationShort);
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    opacity: 0;
+    transition: opacity var(--short);
+  }
+
+  .modal.default.open {
+    inset: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
   }
 
   .modal.menu {
+    display: none;
+  }
+
+  .default .modalContainer {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .modalContainer::-webkit-scrollbar {
     display: none;
   }
 }
