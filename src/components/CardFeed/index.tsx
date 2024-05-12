@@ -9,24 +9,22 @@ type Props = {
 };
 
 export const CardFeed: React.FC<Props> = ({ data }) => {
-  const [selectedCard, setSelectedCard] = useState<Post | null>(null);
+  const [selectedCardIndex, setSelectedCardIndex] = useState<number | undefined>();
 
-  const handleCardClick = (card: Post) => {
-    setSelectedCard(card);
-  };
+  const selectedCard = selectedCardIndex !== undefined && data[selectedCardIndex];
 
   return (
     <>
       <div className={clsx(styles.cardContainer, 'container')}>
-        {data.map((item) => (
-          <div className={styles.postButton} onClick={() => handleCardClick(item)} role="button" key={item.title}>
+        {data.map((item, index) => (
+          <div className={styles.postButton} onClick={() => setSelectedCardIndex(index)} role="button" key={item.title}>
             <Card img={item.img} img_2x={item.img_2x} tags={item.tags} title={item.title} autor={item.autor} date={item.date} views={item.views} text={item.text} />
           </div>
         ))}
       </div>
 
       {selectedCard && (
-        <div style={{ position: 'absolute', inset: 0, backgroundColor: 'pink', height: '100vh' }} onClick={() => setSelectedCard(null)} role="button">
+        <div style={{ position: 'absolute', inset: 0, backgroundColor: 'pink', height: '100vh' }} onClick={() => setSelectedCardIndex(undefined)} role="button">
           <Card
             img={selectedCard.img}
             img_2x={selectedCard.img_2x}
