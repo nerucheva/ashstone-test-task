@@ -7,16 +7,36 @@
 
 .postButton {
   width: 100%;
+  position: relative;
+  z-index: 0;
+  cursor: pointer;
 }
 
-/* TODO: write styles for hover & focus */
 .postButton:after {
   content: '';
+  position: absolute;
+  z-index: -1;
+  inset: -10px;
+  border: 1px solid transparent;
+  transition: border-color var(--animationShort);
+}
+
+.postButton:hover:after,
+.postButton:focus:after {
+  border-color: var(--gray0);
+}
+
+.cardWrapper {
+  padding-block: 1.188rem;
 }
 
 @media all and (min-width: 600px) {
   .postButton {
     width: calc(50% - 20px);
+  }
+
+  .cardWrapper {
+    padding-block: 2rem;
   }
 }
 
