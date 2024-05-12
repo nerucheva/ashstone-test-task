@@ -15,7 +15,7 @@ export const Search: React.FC<Props> = ({ onChange }) => {
     <form className={styles.searchContainer}>
       <input className={clsx(styles.searchInput, { [styles.hidden]: hideSearch })} autoFocus type="text" autoComplete="off" placeholder="Post search" onChange={onChange} />
 
-      <button className={styles.searchButton} onClick={() => setHideSearch(!hideSearch)}>
+      <button className={styles.searchButton} onClick={() => setHideSearch(!hideSearch)} type="button">
         <img className={clsx(!hideSearch && styles.changeIcon)} src="src/assets/searchIcon.svg" alt="Search" />
         <img className={clsx(styles.close, hideSearch && styles.changeIcon)} src="src/assets/closeIcon.svg" alt="Close search" />
       </button>
