@@ -1,16 +1,112 @@
 .modal {
   position: fixed;
-  z-index: 10;
-  inset-block: 0;
-  left: 0;
+  z-index: 40;
   height: 100vh;
   display: flex;
-  overflow: scroll;
+  background-color: var(--white);
+}
+
+.modal.default {
+  inset-inline: 0;
+  bottom: 0;
+  height: 80vh;
+  border-top: 1px solid var(--gray0);
+  -webkit-box-shadow: 10px 10px 46px -5px rgba(0, 0, 0, 0.33);
+  -moz-box-shadow: 10px 10px 46px -5px rgba(0, 0, 0, 0.33);
+  box-shadow: 10px 10px 46px -5px rgba(0, 0, 0, 0.33);
+  opacity: 0;
+  transform: translateY(100%);
+  transition: transform var(--animationLong);
+}
+
+.modal.default.open {
+  opacity: 1;
+  z-index: 50;
+  transform: translateY(0);
+}
+
+.modal.menu {
+  inset-block: 0;
+  left: 0;
+  width: 85%;
+  border-right: 1px solid var(--gray0);
   transform: translateX(-100%);
   transition: transform var(--animationLong);
 }
 
-.modal.modalOpen {
+.modal.menu.open {
   transform: translateX(0);
-  z-index: 239999;
+}
+
+.modalHeader {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  display: flex;
+  align-items: center;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--gray0);
+}
+
+.default .modalHeader {
+  justify-content: flex-end;
+  height: 64px;
+}
+
+.menu .modalHeader {
+  height: 82px;
+  justify-content: space-between;
+}
+
+.modalContainer {
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.default .modalContainer {
+  padding-top: 64px;
+}
+
+.menu .modalContainer {
+  padding-top: 82px;
+}
+
+.closeButton {
+  width: 44px;
+  height: 44px;
+  margin-right: -12px;
+}
+
+.closeButton img {
+  width: 18px;
+  height: 18px;
+}
+
+@media all and (max-height: 700px) {
+  .modal.default {
+    height: 100vh;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .modal.default,
+  .modal.default.open {
+    inset: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .modal.default {
+    width: 60vw;
+    max-width: 562px;
+    height: auto;
+    max-height: 80vh;
+    z-index: -10;
+    transition: opacity var(--animationShort);
+  }
+
+  .modal.menu {
+    display: none;
+  }
 }

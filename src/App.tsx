@@ -42,7 +42,7 @@ function App() {
       <main>
         <Menu />
 
-        <MobileMenuModal onClose={() => setIsVisible(false)} isVisible={isVisible} isMobileMenu />
+        <MobileMenuModal onClose={() => setIsVisible(false)} isVisible={isVisible} />
 
         <div className="cardFeedWrapper">
           <CardFeed data={postsList} />
