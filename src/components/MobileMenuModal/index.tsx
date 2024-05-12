@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import { Modal } from '../Modal';
 import { Menu } from '../Menu';
 import { Logo } from '../Logo';
+import { Dimmer } from '../Dimmer';
 
 import styles from './styles.module.css';
 
@@ -28,6 +29,6 @@ export const MobileMenuModal: React.FC<Props> = ({ onClose, isVisible, isMobileM
       </div>
     </Modal>
 
-    <div className={clsx(styles.dimmer, { [styles.noDimmer]: !isVisible })} onClick={onClose} role="button" />
+    <Dimmer isVisible={isVisible} onClose={onClose} />
   </div>
 );
