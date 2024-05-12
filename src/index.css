@@ -97,7 +97,8 @@ li {
   position: fixed;
 }
 
-.container {
+.container,
+.blockContainer {
   width: 100%;
   padding-inline: 1.25rem;
   box-sizing: border-box;
@@ -109,7 +110,8 @@ li {
 }
 
 @media all and (min-width: 600px) {
-  .container {
+  .container,
+  .blockContainer {
     padding-inline: 2rem;
   }
 }

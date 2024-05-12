@@ -14,9 +14,8 @@
   -webkit-box-shadow: 10px 10px 46px -5px rgba(0, 0, 0, 0.33);
   -moz-box-shadow: 10px 10px 46px -5px rgba(0, 0, 0, 0.33);
   box-shadow: 10px 10px 46px -5px rgba(0, 0, 0, 0.33);
-  opacity: 0;
   transform: translateY(100%);
-  transition: transform var(--animationLong);
+  transition: transform var(--animationMedium);
 }
 
 .modal.default.open {
@@ -89,21 +88,23 @@
 }
 
 @media all and (min-width: 768px) {
-  .modal.default,
-  .modal.default.open {
-    inset: auto;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
   .modal.default {
     width: 60vw;
     max-width: 562px;
     height: auto;
     max-height: 80vh;
     z-index: -10;
-    transition: opacity var(--animationShort);
+    opacity: 0;
+    transition: opacity var(--short);
+  }
+
+  /* .modal.default, */
+  .modal.default.open {
+    inset: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
   }
 
   .modal.menu {

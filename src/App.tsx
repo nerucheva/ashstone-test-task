@@ -44,9 +44,9 @@ function App() {
 
         <MobileMenuModal onClose={() => setIsVisible(false)} isVisible={isVisible} />
 
-        <div className="cardFeedWrapper">
+        <section className="cardFeedWrapper">
           <CardFeed data={postsList} />
-        </div>
+        </section>
       </main>
     </>
   );
