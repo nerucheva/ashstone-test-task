@@ -43,8 +43,7 @@
 
   .logoSection {
     justify-content: space-between;
-    padding-block: 1.813rem 1.625rem;
-    height: auto;
+    height: 82px;
   }
 
   .logoWrapper {

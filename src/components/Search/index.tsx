@@ -2,6 +2,9 @@ import React from 'react';
 import { useState } from 'react';
 import clsx from 'clsx';
 
+import { SearchIcon } from '../SearchIcon';
+import { CloseIcon } from '../CloseIcon';
+
 import styles from './styles.module.css';
 
 type Props = {
@@ -16,8 +19,8 @@ export const Search: React.FC<Props> = ({ onChange }) => {
       <input className={clsx(styles.searchInput, { [styles.hidden]: hideSearch })} autoFocus type="text" autoComplete="off" placeholder="Post search" onChange={onChange} />
 
       <button className={styles.searchButton} onClick={() => setHideSearch(!hideSearch)} type="button">
-        <img className={clsx(!hideSearch && styles.changeIcon)} src="src/assets/searchIcon.svg" alt="Search" />
-        <img className={clsx(styles.close, hideSearch && styles.changeIcon)} src="src/assets/closeIcon.svg" alt="Close search" />
+        <SearchIcon classNames={clsx(!hideSearch && styles.changeIcon)} />
+        <CloseIcon classNames={clsx(styles.close, hideSearch && styles.changeIcon)} />
       </button>
     </form>
   );
