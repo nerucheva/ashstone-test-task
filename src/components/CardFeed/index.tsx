@@ -17,7 +17,7 @@ export const CardFeed: React.FC<Props> = ({ data }) => {
     <>
       <div className={clsx(styles.cardContainer, 'container')}>
         {data.map((item, index) => (
-          <div className={styles.postButton} onClick={() => setSelectedCardIndex(index)} role="button" key={item.title}>
+          <div className={styles.postButton} onClick={() => setSelectedCardIndex(index)} role="button" key={item.title} tabIndex={0}>
             <Card img={item.img} img_2x={item.img_2x} tags={item.tags} title={item.title} autor={item.autor} date={item.date} views={item.views} text={item.text} />
           </div>
         ))}
