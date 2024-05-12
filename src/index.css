@@ -72,7 +72,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 10.313rem;
+  padding-bottom: 5rem;
 }
 
 button {
@@ -115,12 +115,20 @@ li {
 }
 
 @media all and (min-width: 768px) {
+  main {
+    padding-bottom: 6rem;
+  }
+
   .cardFeedWrapper {
     margin-top: 3rem;
   }
 }
 
 @media all and (min-width: 1280px) {
+  main {
+    padding-bottom: 10.313rem;
+  }
+
   .container {
     padding-inline: 0;
   }
