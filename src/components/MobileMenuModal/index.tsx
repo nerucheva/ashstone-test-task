@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { Modal } from '../Modal';
-import { Menu } from '../Menu';
+import { Modal } from 'src/components/Modal';
+import { Menu } from 'src/components/Menu';
 
-import styles from './styles.module.css';
+import styles from 'src/components/MobileMenuModal/styles.module.css';
 
 type Props = {
   onClose: () => void;

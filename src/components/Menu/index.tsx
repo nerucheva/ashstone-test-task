@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import clsx from 'clsx';
 
-import styles from './styles.module.css';
+import styles from 'src/components/Menu/styles.module.css';
 
+// TODO: find the way to use absolute path
 import chevronIcon from '../../../public/chevronIcon.svg';
 
 type MenuItem = {

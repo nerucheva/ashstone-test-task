@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
-import { Header } from './components/Header';
-import { Menu } from './components/Menu';
-import { CardFeed } from './components/CardFeed';
-import { MobileMenuModal } from './components/MobileMenuModal';
-import { Post } from './components/Card';
+
+import { Header } from 'src/components/Header';
+import { Menu } from 'src/components/Menu';
+import { CardFeed } from 'src/components/CardFeed';
+import { MobileMenuModal } from 'src/components/MobileMenuModal';
+import { Post } from 'src/components/Card';
+
 import './App.css';
 
 export const App: React.FC = () => {

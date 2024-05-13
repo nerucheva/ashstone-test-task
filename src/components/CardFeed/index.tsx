@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import clsx from 'clsx';
 
-import { Card } from '../Card';
-import { Post } from '../Card';
-import { Modal } from '../Modal';
+import { Card } from 'src/components/Card';
+import { Post } from 'src/components/Card';
+import { Modal } from 'src/components/Modal';
 
-import styles from './styles.module.css';
+import styles from 'src/components/CardFeed/styles.module.css';
 
 type Props = {
   data: Post[];

@@ -2,11 +2,11 @@ import React from 'react';
 import { useEffect } from 'react';
 import clsx from 'clsx';
 
-import { Dimmer } from '../Dimmer';
-import { Logo } from '../Logo';
-import { CloseIcon } from '../CloseIcon';
+import { Dimmer } from 'src/components/Dimmer';
+import { Logo } from 'src/components/Logo';
+import { CloseIcon } from 'src/components/CloseIcon';
 
-import styles from './styles.module.css';
+import styles from 'src/components/Modal/styles.module.css';
 
 export type Props = {
   isVisible: boolean;

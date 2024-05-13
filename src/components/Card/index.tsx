@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './styles.module.css';
+import styles from 'src/components/Card/styles.module.css';
 
 export type Post = {
   img: string;

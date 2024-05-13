@@ -2,10 +2,10 @@ import React from 'react';
 import { useState } from 'react';
 import clsx from 'clsx';
 
-import { SearchIcon } from '../SearchIcon';
-import { CloseIcon } from '../CloseIcon';
+import { SearchIcon } from 'src/components/SearchIcon';
+import { CloseIcon } from 'src/components/CloseIcon';
 
-import styles from './styles.module.css';
+import styles from 'src/components/Search/styles.module.css';
 
 type Props = {
   onChange: (e: any) => void;
