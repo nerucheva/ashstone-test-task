@@ -3,6 +3,8 @@ import clsx from 'clsx';
 
 import styles from './styles.module.css';
 
+import chevronIcon from '../../../public/chevronIcon.svg';
+
 type MenuItem = {
   title: string;
   link?: string;
@@ -112,11 +114,7 @@ export const Menu: React.FC<Props> = ({ isMobile = false }) => {
                   key={item.title}
                 >
                   <span>{item.title}</span>
-                  <img
-                    className={styles.titleArrow}
-                    src="src/assets/chevronIcon.svg"
-                    alt=""
-                  />
+                  <img className={styles.titleArrow} src={chevronIcon} alt="" />
                 </button>
               )}
 
@@ -131,7 +129,7 @@ export const Menu: React.FC<Props> = ({ isMobile = false }) => {
                       <li key={subitem.title}>
                         <a className={styles.link} href={subitem.link}>
                           <span>{subitem.title}</span>
-                          <img src="src/assets/chevronIcon.svg" alt="" />
+                          <img src={chevronIcon} alt="" />
                         </a>
                       </li>
                     ))}

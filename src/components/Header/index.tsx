@@ -3,6 +3,7 @@ import clsx from 'clsx';
 
 import { Logo } from '../Logo';
 import { Search } from '../Search';
+import menuIcon from '../../../public/menuIcon.svg';
 
 import styles from './styles.module.css';
 
@@ -15,7 +16,7 @@ export const Header: React.FC<Props> = ({ onClick, searchOnChange }) => (
   <header className={styles.header}>
     <div className={clsx(styles.logoSection, 'container')}>
       <button className={styles.menuButton} onClick={onClick}>
-        <img src="src/assets/munuIcon.svg" alt="Open menu" />
+        <img src={menuIcon} alt="Open menu" />
       </button>
 
       <div className={styles.placeholder} />

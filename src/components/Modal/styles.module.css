@@ -76,10 +76,10 @@
   margin-right: -12px;
 }
 
-.closeButton img {
+/* .closeButton img {
   width: 18px;
   height: 18px;
-}
+} */
 
 @media all and (max-height: 700px) {
   .modal.default {

@@ -2,11 +2,15 @@ import React from 'react';
 
 type Props = {
   classNames?: string;
+  width?: number | string;
+  height?: number | string;
 };
 
-export const CloseIcon: React.FC<Props> = ({ classNames }) => (
+export const CloseIcon: React.FC<Props> = ({ classNames, width, height }) => (
   <svg
     fill="none"
+    width={width}
+    height={height}
     viewBox="0 0 21 21"
     className={classNames}
     role="img"

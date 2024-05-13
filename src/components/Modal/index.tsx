@@ -4,6 +4,7 @@ import clsx from 'clsx';
 
 import { Dimmer } from '../Dimmer';
 import { Logo } from '../Logo';
+import { CloseIcon } from '../CloseIcon';
 
 import styles from './styles.module.css';
 
@@ -45,7 +46,7 @@ export const Modal: React.FC<Props> = ({
             {isMobileMenu && <Logo width={162} height={24} />}
 
             <button className={styles.closeButton} onClick={onClose}>
-              <img src="src/assets/closeIcon.svg" alt="Close menu" />
+              <CloseIcon width={18} height={18} />
             </button>
           </div>
           {children}
