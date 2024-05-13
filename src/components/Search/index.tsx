@@ -2,13 +2,13 @@ import React from 'react';
 import { useState } from 'react';
 import clsx from 'clsx';
 
-import { SearchIcon } from '../SearchIcon';
-import { CloseIcon } from '../CloseIcon';
+import { SearchIcon } from 'src/components/SearchIcon';
+import { CloseIcon } from 'src/components/CloseIcon';
 
-import styles from './styles.module.css';
+import styles from 'src/components/Search/styles.module.css';
 
 type Props = {
-  onChange: (e) => void;
+  onChange: (e: any) => void;
 };
 
 export const Search: React.FC<Props> = ({ onChange }) => {
@@ -16,11 +16,24 @@ export const Search: React.FC<Props> = ({ onChange }) => {
 
   return (
     <form className={styles.searchContainer}>
-      <input className={clsx(styles.searchInput, { [styles.hidden]: hideSearch })} autoFocus type="text" autoComplete="off" placeholder="Post search" onChange={onChange} />
+      <input
+        className={clsx(styles.searchInput, { [styles.hidden]: hideSearch })}
+        autoFocus
+        type="text"
+        autoComplete="off"
+        placeholder="Post search"
+        onChange={onChange}
+      />
 
-      <button className={styles.searchButton} onClick={() => setHideSearch(!hideSearch)} type="button">
+      <button
+        className={styles.searchButton}
+        onClick={() => setHideSearch(!hideSearch)}
+        type="button"
+      >
         <SearchIcon classNames={clsx(!hideSearch && styles.changeIcon)} />
-        <CloseIcon classNames={clsx(styles.close, hideSearch && styles.changeIcon)} />
+        <CloseIcon
+          classNames={clsx(styles.close, hideSearch && styles.changeIcon)}
+        />
       </button>
     </form>
   );

@@ -13,7 +13,9 @@
   font-size: var(--fs14);
   border: 1px solid var(--gray0);
   opacity: 1;
-  transition: border-color var(--animationShort), opacity var(--animationShort);
+  transition:
+    border-color var(--animationShort),
+    opacity var(--animationShort);
 }
 
 .searchInput:hover,
@@ -36,7 +38,9 @@
   height: 44px;
   opacity: 1;
   color: var(--black);
-  transition: opacity var(--animationShort), color var(--animationShort);
+  transition:
+    opacity var(--animationShort),
+    color var(--animationShort);
 }
 
 .searchButton:hover {

@@ -1,57 +1,67 @@
 import { useState, useEffect } from 'react';
 
-import { Header } from './components/Header';
-import { Menu } from './components/Menu';
-import { CardFeed } from './components/CardFeed';
-import { MobileMenuModal } from './components/MobileMenuModal';
-
-import { Post } from './components/Card';
+import { Header } from 'src/components/Header';
+import { Menu } from 'src/components/Menu';
+import { CardFeed } from 'src/components/CardFeed';
+import { MobileMenuModal } from 'src/components/MobileMenuModal';
+import { Post } from 'src/components/Card';
 
 import './App.css';
 
-const response = await fetch('https://cloud.codesupply.co/endpoint/react/data.json');
-
-const filterPosts = (searchText: string, postsList: Post[]) => {
-  if (!searchText) {
-    return postsList;
-  }
-  return postsList.filter(({ title, text }) => title.toLowerCase().includes(searchText.toLowerCase()) || text.toLowerCase().includes(searchText.toLowerCase()));
-};
-
-const data = await response.json();
-
-function App() {
+export const App: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
-
   const [query, setQuery] = useState('');
-  const [postsList, setPostsList] = useState(data);
+  const [postsList, setPostsList] = useState<Post[]>([]);
 
   useEffect(() => {
-    const Debounce = setTimeout(() => {
-      const filteredCars = filterPosts(query, data);
-      setPostsList(filteredCars);
-    }, 300);
+    const controller = new AbortController();
+    const signal = controller.signal;
 
-    return () => clearTimeout(Debounce);
-  }, [query]);
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          'https://cloud.codesupply.co/endpoint/react/data.json',
+          { signal },
+        );
+
+        const data = await response.json();
+
+        setPostsList(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+
+    return () => controller.abort();
+  }, []);
+
+  const filteredPosts = query
+    ? postsList.filter(
+        (post) =>
+          post.title.toLowerCase().includes(query.toLowerCase()) ||
+          post.text.toLowerCase().includes(query.toLowerCase()),
+      )
+    : postsList;
 
   return (
     <>
-      <Header onClick={() => setIsVisible(true)} searchOnChange={(e) => setQuery(e.target.value)} />
-
+      <Header
+        onClick={() => setIsVisible(true)}
+        searchOnChange={(e) => setQuery(e.target.value)}
+      />
       <main>
         <Menu />
-
-        <MobileMenuModal onClose={() => setIsVisible(false)} isVisible={isVisible} />
-
+        <MobileMenuModal
+          onClose={() => setIsVisible(false)}
+          isVisible={isVisible}
+        />
         <h1 className="visuallyHidden">Home page</h1>
-
         <section className="cardFeedWrapper">
-          <CardFeed data={postsList} />
+          <CardFeed data={filteredPosts} />
         </section>
       </main>
     </>
   );
-}
-
-export default App;
+};
