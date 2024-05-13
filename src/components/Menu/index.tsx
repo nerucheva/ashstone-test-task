@@ -89,7 +89,12 @@ export const Menu: React.FC<Props> = ({ isMobile = false }) => {
   };
 
   return (
-    <div className={clsx(styles.wrapper, { [styles.menuDesktop]: !isMobile, [styles.hide]: !isSticky })}>
+    <div
+      className={clsx(styles.wrapper, {
+        [styles.menuDesktop]: !isMobile,
+        [styles.hide]: !isSticky,
+      })}
+    >
       <nav className={clsx(styles.menuSection, 'container')}>
         <ul className={styles.menu}>
           {menuContent.map((item, index) => (
@@ -100,17 +105,27 @@ export const Menu: React.FC<Props> = ({ isMobile = false }) => {
                 </a>
               ) : (
                 <button
-                  className={clsx(styles.title, { [styles.opened]: openSubMenuIndex === index })}
+                  className={clsx(styles.title, {
+                    [styles.opened]: openSubMenuIndex === index,
+                  })}
                   onClick={isMobile ? () => toggleSubMenu(index) : undefined}
                   key={item.title}
                 >
                   <span>{item.title}</span>
-                  <img className={styles.titleArrow} src="src/assets/chevronIcon.svg" alt="" />
+                  <img
+                    className={styles.titleArrow}
+                    src="src/assets/chevronIcon.svg"
+                    alt=""
+                  />
                 </button>
               )}
 
               {item.options ? (
-                <ul className={clsx(styles.subMenu, { [styles.opened]: openSubMenuIndex === index })}>
+                <ul
+                  className={clsx(styles.subMenu, {
+                    [styles.opened]: openSubMenuIndex === index,
+                  })}
+                >
                   <div className={styles.contentWrapper}>
                     {item.options.map((subitem) => (
                       <li key={subitem.title}>

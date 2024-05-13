@@ -6,7 +6,13 @@ type Props = {
 };
 
 export const Logo: React.FC<Props> = ({ width = 181, height = 27 }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 181 27" fill="none">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={width}
+    height={height}
+    viewBox="0 0 181 27"
+    fill="none"
+  >
     <path
       fill="#000"
       fillRule="evenodd"

@@ -14,7 +14,12 @@ export type Props = {
   isMobileMenu?: boolean;
 };
 
-export const Modal: React.FC<Props> = ({ isVisible, children, onClose, isMobileMenu }) => {
+export const Modal: React.FC<Props> = ({
+  isVisible,
+  children,
+  onClose,
+  isMobileMenu,
+}) => {
   useEffect(() => {
     if (isVisible) {
       document.body.style.overflow = 'hidden';
@@ -28,7 +33,13 @@ export const Modal: React.FC<Props> = ({ isVisible, children, onClose, isMobileM
   // TODO: trigger animation by the component mounting and unmounting (framer-motion)
   return (
     <>
-      <div className={clsx(styles.modal, { [styles.open]: isVisible, [styles.menu]: isMobileMenu, [styles.default]: !isMobileMenu })}>
+      <div
+        className={clsx(styles.modal, {
+          [styles.open]: isVisible,
+          [styles.menu]: isMobileMenu,
+          [styles.default]: !isMobileMenu,
+        })}
+      >
         <div className={clsx(styles.modalContainer)}>
           <div className={clsx(styles.modalHeader, 'blockContainer')}>
             {isMobileMenu && <Logo width={162} height={24} />}

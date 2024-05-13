@@ -16,11 +16,24 @@ export const Search: React.FC<Props> = ({ onChange }) => {
 
   return (
     <form className={styles.searchContainer}>
-      <input className={clsx(styles.searchInput, { [styles.hidden]: hideSearch })} autoFocus type="text" autoComplete="off" placeholder="Post search" onChange={onChange} />
+      <input
+        className={clsx(styles.searchInput, { [styles.hidden]: hideSearch })}
+        autoFocus
+        type="text"
+        autoComplete="off"
+        placeholder="Post search"
+        onChange={onChange}
+      />
 
-      <button className={styles.searchButton} onClick={() => setHideSearch(!hideSearch)} type="button">
+      <button
+        className={styles.searchButton}
+        onClick={() => setHideSearch(!hideSearch)}
+        type="button"
+      >
         <SearchIcon classNames={clsx(!hideSearch && styles.changeIcon)} />
-        <CloseIcon classNames={clsx(styles.close, hideSearch && styles.changeIcon)} />
+        <CloseIcon
+          classNames={clsx(styles.close, hideSearch && styles.changeIcon)}
+        />
       </button>
     </form>
   );

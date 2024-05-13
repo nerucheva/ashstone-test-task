@@ -74,7 +74,9 @@ button.title.opened img {
   width: 100%;
   background-color: var(--white);
   padding: 0 1.25rem 0;
-  transition: grid-template-rows var(--animationMedium), padding var(--animationMedium);
+  transition:
+    grid-template-rows var(--animationMedium),
+    padding var(--animationMedium);
 }
 
 .subMenu.opened {
@@ -94,7 +96,9 @@ button.title.opened img {
   padding-left: 0;
   color: var(--black);
   font-size: var(--fs13);
-  transition: color var(--animationShort), padding-left var(--animationShort);
+  transition:
+    color var(--animationShort),
+    padding-left var(--animationShort);
 }
 
 .link img {
