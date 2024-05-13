@@ -23,7 +23,7 @@ export const Header: React.FC<Props> = ({ onClick, searchOnChange }) => (
       <div className={styles.placeholder} />
 
       <a className={styles.logoWrapper} href="#" aria-label="Blog – homepage">
-        <Logo width="100%" height="auto" />
+        <Logo width="100%" height="100%" />
       </a>
 
       <Search onChange={searchOnChange} />
